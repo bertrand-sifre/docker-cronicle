@@ -36,5 +36,6 @@ then
 fi
 
 # Run cronicle with unprivileged user
+groupmod -g $DOCKER_GID docker
 chown -R cronicle:cronicle data/ logs/
 exec su cronicle -c "/opt/cronicle/bin/control.sh start"
