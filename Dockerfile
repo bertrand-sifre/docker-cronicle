@@ -8,6 +8,7 @@ ENV        CRONICLE_WebServer__https_port 443
 ARG        docker_gid
 ENV        DOCKER_GID ${docker_gid}
 
+RUN        echo $DOCKER_GID
 # Runtime user
 RUN        adduser cronicle -D -h /opt/cronicle
 RUN        apk add --no-cache shadow
