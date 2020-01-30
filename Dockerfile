@@ -5,7 +5,7 @@ LABEL      maintainer="Sander Bel <sander@intelliops.be>"
 ENV        CRONICLE_base_app_url 'http://localhost:3012'
 ENV        CRONICLE_WebServer__http_port 3012
 ENV        CRONICLE_WebServer__https_port 443
-ARG        docker_gid=998
+ARG        docker_gid
 
 RUN        echo $docker_gid
 # Runtime user
