@@ -8,8 +8,10 @@ ENV        CRONICLE_WebServer__https_port 443
 
 # Runtime user
 RUN        adduser cronicle -D -h /opt/cronicle
+RUN        apk add --no-cache shadow
+RUN        addgroup docker --gid $DOCKER_GID
 
-RUN        apk add --no-cache git curl wget perl bash perl-pathtools tar procps tini docker shadow
+RUN        apk add --no-cache git curl wget perl bash perl-pathtools tar procps tini docker
 RUN        curl -s https://raw.githubusercontent.com/jhuckaby/Cronicle/master/bin/install.js | node
 RUN        addgroup cronicle docker
 
