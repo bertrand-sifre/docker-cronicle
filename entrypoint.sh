@@ -37,4 +37,7 @@ fi
 
 # Run cronicle with unprivileged user
 chown -R cronicle:cronicle data/ logs/
+# Remove pid to prevent restart after crash
+rm -f logs/cronicled.pid
+
 exec su cronicle -c "/opt/cronicle/bin/control.sh start"
